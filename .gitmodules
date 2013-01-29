@@ -1,0 +1,3 @@
+[submodule "moondragon"]
+	path = moondragon
+	url = git@github.com:KlanEstudio/moondragon.git
