@@ -537,4 +537,17 @@ AddCharset utf-8 .css .js .xml .json .rss .atom
   php_value session.cookie_httponly true
 </IfModule>
 
+# ----------------------------------------------------------------------
+# Using "clean" urls
+# ----------------------------------------------------------------------
+
+# Redirect all trafic to a special MoonDragon parser
+
+<IfModule mod_rewrite.c>
+    RewriteRule ^(.*)\.html$ route.php
+    RewriteRule ^(.*)\.tpl$ route.php
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ route.php   [L,QSA]
+</IfModule>
 
