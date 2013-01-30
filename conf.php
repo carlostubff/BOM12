@@ -9,8 +9,8 @@ $url = 'http://localhost/bom12';
 // Section routes
 require_once $moondragon_path.'/moondragon.manager.php';
 
-$section['/bom12'] = 'index.html';
-$section['/bom12/home'] = 'index.html';
+Router::addSection('home', 'modules/home.php', '', true);
+Router::addSection('test', 'modules/test.php');
 
 // Templates
 require_once $moondragon_path.'/moondragon.render.php';
