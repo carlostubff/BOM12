@@ -9,12 +9,15 @@ $url = 'http://localhost/bom12';
 // Section routes
 require_once $moondragon_path.'/moondragon.manager.php';
 
-Router::addSection('home', 'modules/home.php', '', true);
+Router::addSection('index', 'modules/index.php', '', true);
 Router::addSection('test', 'modules/test.php');
 
 // Templates
 require_once $moondragon_path.'/moondragon.render.php';
 
+Vars::set('base_url', $url.'/');
+
+Template::addDir('.');
 Template::addDir('includes');
 
 // Database Information
